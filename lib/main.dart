@@ -26,13 +26,41 @@ return Scaffold(
     centerTitle: true,
     backgroundColor: Colors.red,
   ),
-  body: Center(child: Text(
-    "Hello Taran"
-  ),),
-  floatingActionButton: FloatingActionButton(
-    child: Text("Click"),
-    onPressed: (){
-    },
+  body:Column(
+    children: [
+      Row(children: [
+        Container(
+          child: Text("Hey",textScaleFactor: 2.0,),
+          margin: EdgeInsets.all(30.0),
+          color: Colors.deepOrange,
+
+        ),
+        Container(
+          child: Text("Hey",textScaleFactor: 2.0,),
+          margin: EdgeInsets.all(30.0),
+          color: Colors.deepOrange,
+
+        ),
+        ElevatedButton(onPressed: (){}, child:Text("Click") )
+      ],
+      ),
+      Row(children: [
+        Container(
+          child: Text("Hey",textScaleFactor: 2.0,),
+          margin: EdgeInsets.all(30.0),
+          color: Colors.deepOrange,
+
+        ),
+        Container(
+          child: Text("Hey",textScaleFactor: 2.0,),
+          margin: EdgeInsets.all(30.0),
+          color: Colors.deepOrange,
+
+        ),
+      ],
+      )
+    ],
+
   ),
 );
   }
