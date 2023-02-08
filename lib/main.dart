@@ -1,41 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutternewapp/quotes.dart';
-import 'package:flutternewapp/quote_card.dart';
+import 'package:flutternewapp/pages/choose_location.dart';
+import 'package:flutternewapp/pages/home.dart';
+import 'package:flutternewapp/pages/loading.dart';
+
   void main(){// From here execution of APP starts
-runApp(    MaterialApp( home: MyApp(),),);
-  }
-class MyApp extends StatefulWidget {
+return runApp(MaterialApp(
+initialRoute: '/',//this going to be the initial route and will overwrite the "/"=>screen
+  routes: {
+    '/': (context)=> Loading(),
+    '/home':(context)=> Home(),
+    '/location':(context)=> ChooseLocation(),
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
+  },
 
-class _MyAppState extends State<MyApp> {
-    List<quotes> quote=[
-     quotes( quote:'Hey nxaklsxc   dcv sd',author:'author'),
-      quotes( quote:'Hey nxak lsxc   dcv sd',author:'author'),
-      quotes( quote:'Hey nxaklsxc gfdsa  dcv sd',author:'author')
-    ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[600],
-      appBar: AppBar(title: Text("Awesome Quotes",),backgroundColor: Colors.redAccent,),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children:quote.map((e) {
-return QuoteCard(quote:e,
-delete:(){setState(() {
-  quote.remove(e);
-},
-);
-  } ,);
-    }).toList(),
- ),
-      ),
-    );
+
+));
   }
-}
 
